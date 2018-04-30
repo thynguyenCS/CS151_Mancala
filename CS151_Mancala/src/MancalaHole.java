@@ -1,4 +1,4 @@
 
-public class MancalaHole {
-
+public class MancalaHole extends Pit{
+	
 }

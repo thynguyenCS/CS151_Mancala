@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 
-public class Stone implements MovableShape, Icon{
+public class Stone implements Icon{
 	private int a,b,dia;//diameter
 	public Stone(int d){
 		dia =d;
