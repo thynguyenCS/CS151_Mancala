@@ -2,30 +2,10 @@
  * The Board class that keeps track of all pits and mancalas for both players.
  */
 public class Board {
-	
-	/** The mancalas. */
-	private MancalaHole[] mancalas = new MancalaHole[2];
-	
+
 	/** Player one's pits. */
-	private Pit[] playerOnePits = new Pit[6];
-	
-	/**
-	 * Gets the mancalas.
-	 *
-	 * @return the mancalas
-	 */
-	public MancalaHole[] getMancalas() {
-		return mancalas;
-	}
-	
-	/**
-	 * Sets the mancalas.
-	 *
-	 * @param mancalas the new mancalas
-	 */
-	public void setMancalas(MancalaHole[] mancalas) {
-		this.mancalas = mancalas;
-	}
+	private Pit[] playerOnePits = new Pit[7];
+	private Pit[] playerTwoPits = new Pit[7];
 	
 	/**
 	 * Gets the player one pits.
@@ -63,10 +43,5 @@ public class Board {
 		this.playerTwoPits = playerTwoPits;
 	}
 	
-	/** The player two pits. */
-	private Pit[] playerTwoPits = new Pit[6];
 	
-	
-	
-
 }

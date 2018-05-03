@@ -24,13 +24,15 @@ public class GUI {
 		menu.add(undoButton);
 		menu.add(setStyleButton);
 		
-		PitIcon[] pits = new PitIcon[12];
-		MancalaHoleIcon[] mancalas = new MancalaHoleIcon[2];
-		
 		JPanel gameBoard = new JPanel();
 		gameBoard.setLayout(new BorderLayout());
 		gameBoard.add(menu, BorderLayout.NORTH);
-			
+		
+		// Add initial screen with stone selection, layout options, start game button
+		
+		// Undo button 
+		
+		// 
 	}
 	
 	

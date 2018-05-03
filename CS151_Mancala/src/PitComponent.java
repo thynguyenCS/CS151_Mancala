@@ -17,9 +17,14 @@ import javax.swing.Icon;
 /**
  * The Class Pit.
  */
-public class PitIcon{
+public class PitComponent{
 
-
+	// Draw pit
+	
+	/* Include the information to draw each individual stone. Use a loop that checks
+	 * how many stones are in the pit on the given turn, and draw that many stones in the pit.
+	*/
+	
 
 }
 
