@@ -1,6 +1,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
@@ -11,12 +12,14 @@ import javax.swing.border.EmptyBorder;
 
 public class GUI {
 
+	final Dimension windowSize = new Dimension(2500,1000);
+	
 	public GUI() {
 		//Build the window for the application
 		JFrame gameWindow = new JFrame();
 		gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameWindow.setTitle("Mancala");
-		gameWindow.setSize(2500, 1000);
+		gameWindow.setSize(windowSize);
 		gameWindow.setResizable(false);
 		gameWindow.setVisible(true);
 		
