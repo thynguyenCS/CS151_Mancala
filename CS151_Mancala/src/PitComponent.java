@@ -46,7 +46,6 @@ public void paintComponent(Graphics g) {
 }
 public void drawStones(Graphics2D g2) {
 	int adjustFactor = 25;
-	System.out.println("test here");
 	int numStones = pit.getNumberOfStones();
 	int dia = 50;
 	int row =0;
@@ -99,10 +98,3 @@ for(int i =0; i < row; i++) {
 
 
 
-
-
-
-
-
-
-}

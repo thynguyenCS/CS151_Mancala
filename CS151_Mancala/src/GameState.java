@@ -8,7 +8,6 @@ public class GameState {
 		if(model == null) {
 			isModelNull = true;
 		}else {
-			sones = model.get().;
 			currentPlayer = model.getCurrentPlayer();
 		}
 	}
