@@ -52,4 +52,18 @@ public class DataModel {
 		}
 	}
 	
+	public int[] getPits() {
+		int[] stonesInPit = new int[12];
+		for(int i = 0; i< stonesInPit.length; i++) {
+			stonesInPit[i] = pits[i].getNumberOfStones();
+		}
+		return stonesInPit;
+	}
+	
+	public int getNumberOfStonesInPit(int pitNumber) {
+		return pits[pitNumber].getNumberOfStones();
+	}
+	
+	
+	
 }

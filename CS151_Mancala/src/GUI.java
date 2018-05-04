@@ -25,14 +25,16 @@ public class GUI {
 		menu.add(undoButton);
 		menu.add(setStyleButton);
 		menu.add(endTurnButton);
+		menu.setVisible(true);
 		
 		//Make game board
 		JPanel gameBoard = new JPanel();
+		gameWindow.add(gameBoard);
 		gameBoard.setLayout(new BorderLayout());
 		gameBoard.add(menu, BorderLayout.NORTH);
 		gameBoard.setVisible(true);
 		
-		gameWindow.add(gameBoard);
+		
 		
 		
 	}
