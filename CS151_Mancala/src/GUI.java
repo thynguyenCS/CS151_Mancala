@@ -18,21 +18,23 @@ public class GUI {
 		//Create undo and select style buttons
 		JButton undoButton = new JButton("Undo");
 		JButton setStyleButton = new JButton("Select Layout");
+		JButton endTurnButton = new JButton("End Turn");
 		
 		//Put buttons on a menu
 		JPanel menu = new JPanel();
 		menu.add(undoButton);
 		menu.add(setStyleButton);
+		menu.add(endTurnButton);
 		
+		//Make game board
 		JPanel gameBoard = new JPanel();
 		gameBoard.setLayout(new BorderLayout());
 		gameBoard.add(menu, BorderLayout.NORTH);
+		gameBoard.setVisible(true);
 		
-		// Add initial screen with stone selection, layout options, start game button
+		gameWindow.add(gameBoard);
 		
-		// Undo button 
 		
-		// 
 	}
 	
 	
