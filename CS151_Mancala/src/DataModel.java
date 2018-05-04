@@ -22,7 +22,6 @@ public class DataModel {
 		//Initialize change listeners
 		cl = new ArrayList<ChangeListener>();
 		
-		
 		//Set number of undoes
 		undoCounter = 3;
 		
