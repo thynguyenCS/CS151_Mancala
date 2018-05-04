@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.event.*;
 
 public class DataModel {
 	private Pit[] pits;
@@ -5,6 +8,8 @@ public class DataModel {
 	private int numberOfStones;
 	private int undoCounter;
 	private char currentPlayer;
+	private ArrayList<ChangeListener> cl;
+	
 	
 	public DataModel() {
 		
@@ -14,6 +19,10 @@ public class DataModel {
 			p = new Pit(numberOfStones);
 		}
 		
+		//Initialize change listeners
+		cl = new ArrayList<ChangeListener>();
+		
+		
 		//Set number of undoes
 		undoCounter = 3;
 		
@@ -21,10 +30,26 @@ public class DataModel {
 		currentPlayer = 'A';
 		
 		//Initialize the last state as null for the first turn
-		lastState = null;
-		
+		lastState = null;	
 		
 	}
 	
+	public char getCurrentPlayer() {
+		return currentPlayer;
+	}
+
+	public void setCurrentPlayer(char currentPlayer) {
+		this.currentPlayer = currentPlayer;
+	}
+
+	public void attatchToModel(ChangeListener c) {
+		cl.add(c);	
+	}
+	
+	public void notifyView() {
+		for(ChangeListener c : cl) {
+			c.stateChanged(new ChangeEvent(this));
+		}
+	}
 	
 }
