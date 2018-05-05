@@ -13,20 +13,18 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/**
- * The Class StartPanel.
- */
 public class StartPanel extends JComponent {
-	
-	/**
-	 * Instantiates a new start panel.
-	 */
-	public StartPanel() {
+	public GUI gui;
+	public DataModel model;
+
+	public StartPanel(GUI gui, DataModel m) {
+		this.gui = gui;
+		this.model = m;
 		// Add initial screen with stone selection, layout options, start game
 		// button
 
 		// _______________SET UP PANELS___________________
-		FlowLayout alignButtons = new FlowLayout();
+	//	FlowLayout alignButtons = new FlowLayout();
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -95,43 +93,43 @@ public class StartPanel extends JComponent {
 		lay1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				// layout = layout1();
+				gui.setBoardLayout(new Layout1());
 			}
 		});
 
 		lay2Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				// layout = layout2();
+				gui.setBoardLayout(new Layout2());
 			}
 		});
 
 		lay3Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				// layout = layout3();
+				gui.setBoardLayout(new Layout3());
 			}
 		});
-
 		threeStones.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent e) {
 
-				// startStoneCount = 3;
-			}
-		});
+			model.setNumOfStones(3);
+		}
+	});
 
-		fourStones.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-							}
-		});
+	fourStones.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
 
-		startButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			model.setNumOfStones(4);
+		}
+	});
+	
+	startButton.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
 
-				// beginGame;
-			}
-		});
+			// beginGame;
+		}
+	});
 
 	}
 }
