@@ -1,27 +1,28 @@
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Shape;
+
+import javax.swing.JPanel;
 
 public interface BoardLayout {
 
     /**
      * board color for the game
      */
-    Color getBoardColor();
-
-    /**
-     * pit dimension for the game
-     */
-    Dimension getDimension();
+    Color getBorderColor();
     
     /**
      * pit color for the game
      */
     Color getPitColor();
+    Color getStoneColor();
 
     /**
      * pit shape for the game
      */
-    Shape getPitShape();
+    Shape getPitShape(JPanel p);
+    /**
+     * get Stroke of the border
+     */
+    int getStroke();
 
 }
