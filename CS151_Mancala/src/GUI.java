@@ -90,7 +90,7 @@ public class GUI {
 		gameWindow.add(startPanel);
 		
 		//style panel
-		StylePanel stylePanel = new StylePanel();
+		LayoutSelectionPanel stylePanel = new LayoutSelectionPanel();
 		stylePanel.setVisible(true);
 		gameWindow.add(stylePanel);
 		

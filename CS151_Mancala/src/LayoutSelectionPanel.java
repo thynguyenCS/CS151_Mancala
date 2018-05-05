@@ -8,12 +8,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class LayoutSelectionPanel {
+public class LayoutSelectionPanel extends JComponent{
 
 	public LayoutSelectionPanel() {
 		// Add initial screen with stone selection, layout options, start game
