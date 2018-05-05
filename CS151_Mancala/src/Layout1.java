@@ -1,18 +1,20 @@
+
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
+
+import javax.swing.JPanel;
 
 public class Layout1 implements BoardLayout {
 
 	//ELLIPSE
 	
     /**
-     * board color for the game
+     * border color for the game
      */
     @Override
-    public Color getBoardColor() {
-        return Color.CYAN;
+    public Color getBorderColor() {
+        return Color.BLUE;
     }
 
     /**
@@ -20,23 +22,32 @@ public class Layout1 implements BoardLayout {
      */
     @Override
     public Color getPitColor() {
-        return Color.GRAY;
+        return new Color(255,255,204);
     }
 
     /**
      * pit shape for the game
      */
     @Override
-    public Shape getPitShape() {
-        return new Ellipse2D.Double(0, 0, 10, 10);
+    public Shape getPitShape(JPanel p) {
+        return new Ellipse2D.Double(0, 0, p.getWidth(), p.getHeight());
     }
+    
 
     /**
-     * pit dimension for the game
+     * The thickness of the border of the pit
      */
-    @Override
-    public Dimension getDimension() {
-        return new Dimension(45, 45);
-    }
+
+	@Override
+	public int getStroke() {
+		return 5;
+	}
+/**
+ * The color of the stones
+ */
+	@Override
+	public Color getStoneColor() {
+		return Color.BLACK;
+	}
     
 }
