@@ -66,7 +66,7 @@ public class Controller implements ChangeListener{
 		
 		view.getSetStyleButton().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				view.showStylePanel();
+				
 			}
 		});
 		
