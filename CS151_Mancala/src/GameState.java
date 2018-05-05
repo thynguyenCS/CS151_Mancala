@@ -1,16 +1,29 @@
 
 public class GameState {
 	private char currentPlayer;
-	private int[] stones;
-	private boolean isModelNull = false;
+	private int[] stonesInPits;
+	private boolean isStateNull = false;
 	
 	public GameState(DataModel model) {
 		if(model == null) {
-			isModelNull = true;
+			isStateNull = true;
 		}else {
 			currentPlayer = model.getCurrentPlayer();
+			stonesInPits = model.getPits();
 		}
 	}
-
 	
+	public boolean getIsStateNull() {
+		return isStateNull;
+	}
+	
+	public int[] getStonesInPits() {
+		return stonesInPits;
+	}
+	
+	public char getCurrentPlayer() {
+		return currentPlayer;
+	}
 }
+	
+
