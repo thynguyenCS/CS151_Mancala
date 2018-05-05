@@ -1,3 +1,4 @@
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -19,6 +20,10 @@ public class Controller implements ChangeListener{
 
 	public void stateChanged(ChangeEvent arg0) {
 		// Update view
+		Graphics g = null;
+		for(int i = 0; i<view.getPits().length; i++) {			
+			view.getPits()[i].paintComponent(g);
+		}
 		
 	}
 	
