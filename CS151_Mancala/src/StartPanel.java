@@ -2,7 +2,11 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.LayoutManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -30,7 +34,7 @@ public class StartPanel extends JComponent {
 		startPanel.setPreferredSize(new Dimension(650, 150));
 
 		JPanel containerPanel = new JPanel();
-		containerPanel.setLayout(new BoxLayout(containerPanel, BoxLayout.Y_AXIS));
+		containerPanel.setLayout((LayoutManager) new BoxLayout(containerPanel, BoxLayout.Y_AXIS));
 
 		// ________________LAYOUT BUTTONS______________________
 		JLabel layoutLabel = new JLabel("Please select board style: ");
