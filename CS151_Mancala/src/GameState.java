@@ -1,6 +1,6 @@
 
 public class GameState {
-	private char currentPlayer;
+	private boolean currentPlayer;
 	private int[] stonesInPits;
 	private boolean isStateNull = false;
 	
@@ -21,7 +21,7 @@ public class GameState {
 		return stonesInPits;
 	}
 	
-	public char getCurrentPlayer() {
+	public boolean getCurrentPlayer() {
 		return currentPlayer;
 	}
 }

@@ -32,7 +32,7 @@ public class Controller implements ChangeListener{
 
 			public void mouseClicked(MouseEvent click) {
 				model.replaceGameState(new GameState(model));
-				model.update();
+				model.notifyView();
 				
 			}
 
@@ -66,7 +66,7 @@ public class Controller implements ChangeListener{
 		
 		view.getSetStyleButton().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				view.openStylePanel();
+				
 			}
 		});
 		
