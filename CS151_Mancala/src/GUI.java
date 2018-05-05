@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
+import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,21 +13,23 @@ import javax.swing.border.EmptyBorder;
 
 public class GUI {
 
-	final Dimension windowSize = new Dimension(2500,1000);
-	
+	final Dimension WINDOWSIZE = new Dimension(2500,1000);
+	private PitComponent[] pits;
+	private JButton undoButton, setStyleButton, endTurnButton;
+
 	public GUI() {
 		//Build the window for the application
 		JFrame gameWindow = new JFrame();
 		gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameWindow.setTitle("Mancala");
-		gameWindow.setSize(windowSize);
+		gameWindow.setSize(WINDOWSIZE);
 		gameWindow.setResizable(false);
 		gameWindow.setVisible(true);
 		
 		//Create undo and select style buttons
-		JButton undoButton = new JButton("Undo");
-		JButton setStyleButton = new JButton("Select Layout");
-		JButton endTurnButton = new JButton("End Turn");
+		undoButton = new JButton("Undo");
+		setStyleButton = new JButton("Select Layout");
+		endTurnButton = new JButton("End Turn");
 				
 		//Put buttons on a menu
 		JPanel menu = new JPanel();
@@ -44,7 +47,7 @@ public class GUI {
 		//Add pits to gameboard
 		JPanel pitPanel = new JPanel();
 		pitPanel.setLayout(new GridLayout(2,6));
-		PitComponent[] pits = new PitComponent[12];
+		pits = new PitComponent[12];
 		PitComponent temp;
 		for(int i = 0; i < pits.length; i++) {
 			temp = new PitComponent(3);
@@ -73,6 +76,28 @@ public class GUI {
 		
 		gameBoard.setVisible(true);
 	}	
+	
+	public PitComponent[] getPits() {
+		return pits;
+	}
+
+	public void setPits(PitComponent[] pits) {
+		this.pits = pits;
+	}
+
+	public JButton getEndTurnButton() {
+		return endTurnButton;
+	}
+
+	public JButton getSetStyleButton() {
+		return setStyleButton;
+	}
+
+	public void openStylePanel() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
 	
 	

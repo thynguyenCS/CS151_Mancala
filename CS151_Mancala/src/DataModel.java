@@ -62,6 +62,21 @@ public class DataModel {
 	public int getNumberOfStonesInPit(int pitNumber) {
 		return pits[pitNumber].getNumberOfStones();
 	}
+
+	public void replaceGameState(GameState gameState) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void changePlayer() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	

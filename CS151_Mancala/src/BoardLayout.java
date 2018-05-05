@@ -24,4 +24,9 @@ public interface BoardLayout {
      */
     Shape getPitShape();
 
+	static Object getStyle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
