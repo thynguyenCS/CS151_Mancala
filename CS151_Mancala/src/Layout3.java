@@ -46,5 +46,4 @@ public class Layout3 implements BoardLayout {
 		// TODO Auto-generated method stub
 		return Color.BLUE;
 	}
-
 }
