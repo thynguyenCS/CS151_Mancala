@@ -24,5 +24,4 @@ public interface BoardLayout {
      * get Stroke of the border
      */
     int getStroke();
-
 }
