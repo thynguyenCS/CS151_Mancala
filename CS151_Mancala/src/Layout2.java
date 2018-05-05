@@ -47,6 +47,5 @@ public class Layout2 implements BoardLayout {
 	@Override
 	public Color getStoneColor() {
 		return Color.BLACK;
-	}
-    
+	}  
 }
