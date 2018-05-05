@@ -17,6 +17,7 @@ public class GUI {
 	private PitComponent[] pits;
 	private JButton undoButton, setStyleButton, endTurnButton;
 
+
 	public GUI() {
 		//Build the window for the application
 		JFrame gameWindow = new JFrame();
@@ -43,14 +44,20 @@ public class GUI {
 		gameWindow.add(gameBoard);
 		gameBoard.setLayout(new BorderLayout());
 		gameBoard.add(menu, BorderLayout.NORTH);		
-				
+		
+		//set up layouts
+		Layout1 l1 = new Layout1();
+		Layout2 l2 = new Layout2();
+		Layout3 l3 =  new Layout3();
+		
+		
 		//Add pits to gameboard
 		JPanel pitPanel = new JPanel();
 		pitPanel.setLayout(new GridLayout(2,6));
 		pits = new PitComponent[12];
 		PitComponent temp;
 		for(int i = 0; i < pits.length; i++) {
-			temp = new PitComponent(3);
+			temp = new PitComponent(3, l1);
 			temp.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 5));
 			pits[i] = temp;
 			temp.setSize(300, 400);
@@ -60,7 +67,7 @@ public class GUI {
 		
 		//Create Player B's Mancala
 		JPanel mancalaEast = new JPanel();
-		PitComponent mancalaB = new PitComponent(3);	
+		PitComponent mancalaB = new PitComponent(3, l1);	
 		mancalaB.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 5));
 		mancalaEast.add(mancalaB);
 		gameBoard.add(mancalaEast, BorderLayout.EAST);
@@ -68,7 +75,7 @@ public class GUI {
 		
 		//Create Player A's Mancala
 		JPanel mancalaWest = new JPanel();
-		PitComponent mancalaA = new PitComponent(3);
+		PitComponent mancalaA = new PitComponent(3, l1);
 		mancalaA.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 5));
 		mancalaWest.add(mancalaA);
 		gameBoard.add(mancalaWest, BorderLayout.WEST);
