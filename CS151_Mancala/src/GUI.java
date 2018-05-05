@@ -17,6 +17,7 @@ public class GUI {
 	final Dimension WINDOWSIZE = new Dimension(2500,1000);
 	private PitComponent[] pits;
 	private JButton undoButton, setStyleButton, endTurnButton;
+	LayoutSelectionPanel stylePanel;
 
 
 	public GUI() {
@@ -90,8 +91,8 @@ public class GUI {
 		gameWindow.add(startPanel);
 		
 		//style panel
-		LayoutSelectionPanel stylePanel = new LayoutSelectionPanel();
-		stylePanel.setVisible(true);
+		stylePanel = new LayoutSelectionPanel();
+		stylePanel.setVisible(false);
 		gameWindow.add(stylePanel);
 		
 		
@@ -111,6 +112,10 @@ public class GUI {
 
 	public JButton getSetStyleButton() {
 		return setStyleButton;
+	}
+
+	public void showStylePanel() {
+		stylePanel.setVisible(true);
 	}
 	
 
