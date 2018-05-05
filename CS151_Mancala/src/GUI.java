@@ -1,6 +1,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
@@ -25,7 +26,7 @@ public class GUI {
 		gameWindow.setTitle("Mancala");
 		gameWindow.setSize(WINDOWSIZE);
 		gameWindow.setResizable(false);
-		gameWindow.setVisible(true);
+		gameWindow.setVisible(false);
 		
 		//Create undo and select style buttons
 		undoButton = new JButton("Undo");
@@ -57,7 +58,7 @@ public class GUI {
 		pits = new PitComponent[12];
 		PitComponent temp;
 		for(int i = 0; i < pits.length; i++) {
-			temp = new PitComponent(3, l1);
+			temp = new PitComponent(3, l2);
 			temp.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 5));
 			pits[i] = temp;
 			temp.setSize(300, 400);
@@ -67,7 +68,7 @@ public class GUI {
 		
 		//Create Player B's Mancala
 		JPanel mancalaEast = new JPanel();
-		PitComponent mancalaB = new PitComponent(3, l1);	
+		PitComponent mancalaB = new PitComponent(3, l2);	
 		mancalaB.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 5));
 		mancalaEast.add(mancalaB);
 		gameBoard.add(mancalaEast, BorderLayout.EAST);
@@ -75,13 +76,25 @@ public class GUI {
 		
 		//Create Player A's Mancala
 		JPanel mancalaWest = new JPanel();
-		PitComponent mancalaA = new PitComponent(3, l1);
+		PitComponent mancalaA = new PitComponent(3, l2);
 		mancalaA.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 5));
 		mancalaWest.add(mancalaA);
 		gameBoard.add(mancalaWest, BorderLayout.WEST);
 		mancalaWest.setVisible(true);
-		
+
 		gameBoard.setVisible(true);
+		
+		//start panel 
+		StartPanel startPanel = new StartPanel();
+		startPanel.setVisible(false);
+		gameWindow.add(startPanel);
+		
+		//style panel
+		StylePanel stylePanel = new StylePanel();
+		stylePanel.setVisible(true);
+		gameWindow.add(stylePanel);
+		
+		
 	}	
 	
 	public PitComponent[] getPits() {
@@ -99,12 +112,8 @@ public class GUI {
 	public JButton getSetStyleButton() {
 		return setStyleButton;
 	}
-
-	public void openStylePanel() {
-		// TODO Auto-generated method stub
-		
-	}
 	
+
 }
 	
 	
