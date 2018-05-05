@@ -29,12 +29,6 @@ public class LayoutSelectionPanel extends JComponent{
 		layoutPanel.setPreferredSize(new Dimension(650, 150));
 		// layoutPanel.setLayout(new GridLayout(5, 5));
 
-		JPanel stonePanel = new JPanel();
-		stonePanel.setPreferredSize(new Dimension(650, 150));
-
-		JPanel startPanel = new JPanel();
-		startPanel.setPreferredSize(new Dimension(650, 150));
-
 		JPanel containerPanel = new JPanel();
 		containerPanel.setLayout(new BoxLayout(containerPanel, BoxLayout.Y_AXIS));
 
@@ -55,31 +49,9 @@ public class LayoutSelectionPanel extends JComponent{
 		layoutPanel.add(lay3Button);
 		lay3Button.setPreferredSize(new Dimension(100, 70));
 
-		// ________________NUMBER OF STONES___________________
-		JLabel numberStoneLabel = new JLabel("Please select number of stones: ");
-
-		// stonePanel.setLayout(new GridLayout(4, 2));
-		stonePanel.add(numberStoneLabel);
-
-		JButton threeStones = new JButton("3");
-		stonePanel.add(threeStones);
-		threeStones.setPreferredSize(new Dimension(100, 70));
-
-		JButton fourStones = new JButton("4");
-		stonePanel.add(fourStones);
-		fourStones.setPreferredSize(new Dimension(100, 70));
-
-		// _______________START BUTTON____________________
-		JLabel startLabel = new JLabel("Press START button to begin game after you have made your selection.");
-		// startPanel.setLayout(new GridLayout(4, 2));
-		startPanel.add(startLabel);
-		JButton startButton = new JButton("START");
-		startPanel.add(startButton);
-		startPanel.setPreferredSize(new Dimension(100, 70));
-
+		
 		containerPanel.add(layoutPanel, BorderLayout.NORTH);
-		containerPanel.add(stonePanel, BorderLayout.CENTER);
-		containerPanel.add(startPanel, BorderLayout.SOUTH);
+		
 
 		frame.getContentPane().add(containerPanel);
 		frame.pack();
@@ -105,27 +77,6 @@ public class LayoutSelectionPanel extends JComponent{
 			public void actionPerformed(ActionEvent e) {
 
 				// layout = layout3();
-			}
-		});
-
-		threeStones.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				// startStoneCount = 3;
-			}
-		});
-
-		fourStones.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				// startStoneCount = 4;
-			}
-		});
-		
-		startButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				// beginGame;
 			}
 		});
 
