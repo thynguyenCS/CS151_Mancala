@@ -14,8 +14,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * The Class LayoutSelectionPanel.
+ */
 public class LayoutSelectionPanel extends JComponent{
 
+	/**
+	 * Instantiates a new layout selection panel.
+	 */
 	public LayoutSelectionPanel() {
 		// Add initial screen with stone selection, layout options, start game
 		// button

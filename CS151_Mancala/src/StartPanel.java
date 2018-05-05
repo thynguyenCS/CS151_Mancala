@@ -13,7 +13,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * The Class StartPanel.
+ */
 public class StartPanel extends JComponent {
+	
+	/**
+	 * Instantiates a new start panel.
+	 */
 	public StartPanel() {
 		// Add initial screen with stone selection, layout options, start game
 		// button
@@ -115,9 +122,8 @@ public class StartPanel extends JComponent {
 
 		fourStones.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				// startStoneCount = 4;
-			}
+				
+							}
 		});
 
 		startButton.addActionListener(new ActionListener() {

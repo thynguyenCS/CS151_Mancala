@@ -7,10 +7,23 @@ import java.awt.event.MouseListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+/**
+ * The Class Controller.
+ */
 public class Controller implements ChangeListener{
+	
+	/** The model. */
 	private DataModel model;
+	
+	/** The view. */
 	private GUI view;
 
+	/**
+	 * Instantiates a new controller.
+	 *
+	 * @param g the g
+	 * @param d the d
+	 */
 	public Controller(GUI g, DataModel d) {
 		this.view = g;
 		this.model = d;
@@ -18,6 +31,9 @@ public class Controller implements ChangeListener{
 		stateChanged(null);
 	}
 
+	/**
+	 * Update the state.
+	 */
 	public void stateChanged(ChangeEvent arg0) {
 		// Update view
 		Graphics g = null;
@@ -27,6 +43,9 @@ public class Controller implements ChangeListener{
 		
 	}
 	
+	/**
+	 * Attach listeners.
+	 */
 	public void attach() {
 		MouseListener l = new MouseListener() {
 

@@ -2,17 +2,39 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.event.*;
 
+/**
+ * The Class DataModel.
+ */
 public class DataModel {
+	
+	/** The pits. */
 	private Pit[] pits;
+	
+	/** The last state. */
 	private GameState lastState;
+	
+	/** The number of stones. */
 	private int numberOfStones;
+	
+	/** The undo counter. */
 	private int undoCounter;
+	
+	/** The current player. */
 	private boolean currentPlayer;
+	
+	/** The change player. */
 	private boolean changePlayer;
+	
+	/** The player B score. */
 	private int playerAScore, playerBScore;
+	
+	/** The cl. */
 	private ArrayList<ChangeListener> cl;
 	
 	
+	/**
+	 * Instantiates a new data model.
+	 */
 	public DataModel() {
 		
 		//Initialize pits and fill them with the chosen number of stones
@@ -35,28 +57,56 @@ public class DataModel {
 		
 	}
 	
+	/**
+	 * Gets the current player.
+	 *
+	 * @return the current player
+	 */
 	public boolean getCurrentPlayer() {
 		return currentPlayer;
 	}
 
+	/**
+	 * Sets the current player.
+	 *
+	 * @param currentPlayer the new current player
+	 */
 	public void setCurrentPlayer(boolean currentPlayer) {
 		this.currentPlayer = currentPlayer;
 	}
 
+	/**
+	 * Gets the switch.
+	 *
+	 * @return the switch
+	 */
 	public boolean getSwitch() {
 		return changePlayer;
 	}
 	
+	/**
+	 * Attatch to model.
+	 *
+	 * @param c the c
+	 */
 	public void attatchToModel(ChangeListener c) {
 		cl.add(c);	
 	}
 	
+	/**
+	 * Notify view.
+	 */
 	public void notifyView() {
 		for(ChangeListener c : cl) {
 			c.stateChanged(new ChangeEvent(this));
 		}
 	}
 	
+	/**
+	 * Gets the pits.
+	 *
+	 * @return the pits
+	 */
 	public int[] getPits() {
 		int[] stonesInPit = new int[12];
 		for(int i = 0; i< stonesInPit.length; i++) {
@@ -65,6 +115,11 @@ public class DataModel {
 		return stonesInPit;
 	}
 	
+	/**
+	 * Sets the starting stones.
+	 *
+	 * @param numberOfStones the new starting stones
+	 */
 	public void setStartingStones(int numberOfStones) {
 		int startingStones = numberOfStones;
 		for(int i = 0; i < pits.length; i++) {
@@ -72,22 +127,46 @@ public class DataModel {
 		}
 	}
 	
+	/**
+	 * Gets the number of stones in pit.
+	 *
+	 * @param pitNumber the pit number
+	 * @return the number of stones in pit
+	 */
 	public int getNumberOfStonesInPit(int pitNumber) {
 		return pits[pitNumber].getNumberOfStones();
 	}
 
+	/**
+	 * Gets the last state.
+	 *
+	 * @return the last state
+	 */
 	public GameState getLastState() {
 		return lastState;
 	}
 	
+	/**
+	 * Replace game state.
+	 *
+	 * @param gameState the game state
+	 */
 	public void replaceGameState(GameState gameState) {
 		lastState = gameState;
 	}
 
+	/**
+	 * Gets the remaining undos.
+	 *
+	 * @return the remaining undos
+	 */
 	public int getRemainingUndos() {
 		return undoCounter;
 	}
 	
+	/**
+	 * Change player.
+	 */
 	public void changePlayer() {
 		currentPlayer = !currentPlayer;
 		undoCounter = 3;
@@ -96,6 +175,11 @@ public class DataModel {
 		notifyView();
 	}
 	
+	/**
+	 * Reset.
+	 *
+	 * @param s the s
+	 */
 	public void reset(GameState s) {
 		for(int i = 0; i < pits.length; i++) {
 			pits[i].setNumberOfStones(s.getStonesInPits()[i]);
@@ -105,6 +189,9 @@ public class DataModel {
 		notifyView();
 	}
 	
+	/**
+	 * Undo.
+	 */
 	public void undo() {
 		if(undoCounter > 0) {
 			reset(lastState);
@@ -114,6 +201,11 @@ public class DataModel {
 		notifyView();
 	}
 	
+	/**
+	 * Clicked.
+	 *
+	 * @param pit the pit
+	 */
 	public void clicked(int pit) {
 		int stonesInPit = pits[pit].getNumberOfStones();
 		pits[pit].setNumberOfStones(0);
@@ -198,6 +290,9 @@ public class DataModel {
 	
 	}
 
+	/**
+	 * Game over.
+	 */
 	private void gameOver() {
 		String winner;
 		if(playerAScore > playerBScore) {

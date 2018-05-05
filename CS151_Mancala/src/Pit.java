@@ -41,7 +41,7 @@ public class Pit {
 	public void removeStone() {
 		numberOfStones--;
 	}
-	/*
+	/**
 	* Removes all stones from the pit
 	*/
 	public void removeAll() {

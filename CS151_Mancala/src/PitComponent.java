@@ -21,14 +21,33 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
+
+/**
+ * The Class PitComponent.
+ */
 public class PitComponent extends JPanel {
+	
+	/** The pit. */
 	protected Pit pit;
+	
+	/** The pit panel. */
 	protected final JPanel pitPanel;
+	
+	/** The board layout. */
 	BoardLayout  boardLayout;
+	
+	/** The pit shape. */
 	Shape pitShape;
 
+	/** The height. */
 	private int WIDTH = 80, HEIGHT = 80;
 
+	/**
+	 * Instantiates a new pit component.
+	 *
+	 * @param numOfStones the num of stones
+	 * @param bl the bl
+	 */
 	public PitComponent(int numOfStones, BoardLayout bl) {
 		pit = new Pit(numOfStones);
 		pitPanel = new JPanel();
@@ -37,14 +56,27 @@ public class PitComponent extends JPanel {
 		
 	}
 
+	/**
+	 * Gets the pit.
+	 *
+	 * @return the pit
+	 */
 	public Pit getPit() {
 		return pit;
 	}
 
+	/**
+	 * Gets the pit panel.
+	 *
+	 * @return the pit panel
+	 */
 	public JPanel getPitPanel() {
 		return pitPanel;
 	}
-	@Override
+	
+	/**
+	 * Paint the component
+	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
@@ -58,6 +90,11 @@ public class PitComponent extends JPanel {
 		repaint();
 	}
 
+	/**
+	 * Draw stones.
+	 *
+	 * @param g2 the g 2
+	 */
 	public void drawStones(Graphics2D g2) {
 		int adjustFactor = 25;
 

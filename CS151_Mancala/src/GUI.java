@@ -12,13 +12,24 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * The Class GUI.
+ */
 public class GUI {
 
+	/** The windowsize. */
 	final Dimension WINDOWSIZE = new Dimension(2500,1000);
+	
+	/** The pits. */
 	private PitComponent[] pits;
+	
+	/** The end turn button. */
 	private JButton undoButton, setStyleButton, endTurnButton;
 
 
+	/**
+	 * Instantiates a new gui.
+	 */
 	public GUI() {
 		//Build the window for the application
 		JFrame gameWindow = new JFrame();
@@ -80,35 +91,51 @@ public class GUI {
 		mancalaA.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 5));
 		mancalaWest.add(mancalaA);
 		gameBoard.add(mancalaWest, BorderLayout.WEST);
-		mancalaWest.setVisible(true);
+		mancalaWest.setVisible(false);
 
-		gameBoard.setVisible(true);
+		gameBoard.setVisible(false);
 		
 		//start panel 
 		StartPanel startPanel = new StartPanel();
-		startPanel.setVisible(false);
+		startPanel.setVisible(true);
 		gameWindow.add(startPanel);
-		
-		//style panel
-		LayoutSelectionPanel stylePanel = new LayoutSelectionPanel();
-		stylePanel.setVisible(true);
-		gameWindow.add(stylePanel);
+	
 		
 		
 	}	
 	
+	/**
+	 * Gets the pits.
+	 *
+	 * @return the pits
+	 */
 	public PitComponent[] getPits() {
 		return pits;
 	}
 
+	/**
+	 * Sets the pits.
+	 *
+	 * @param pits the new pits
+	 */
 	public void setPits(PitComponent[] pits) {
 		this.pits = pits;
 	}
 
+	/**
+	 * Gets the end turn button.
+	 *
+	 * @return the end turn button
+	 */
 	public JButton getEndTurnButton() {
 		return endTurnButton;
 	}
 
+	/**
+	 * Gets the sets the style button.
+	 *
+	 * @return the sets the style button
+	 */
 	public JButton getSetStyleButton() {
 		return setStyleButton;
 	}
