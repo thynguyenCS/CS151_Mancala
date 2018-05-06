@@ -14,26 +14,26 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-/**
- * The Class LayoutSelectionPanel.
- */
 public class LayoutSelectionPanel extends JComponent{
+	public GUI gui;
+	public DataModel model;
 
-	/**
-	 * Instantiates a new layout selection panel.
-	 */
-	public LayoutSelectionPanel() {
-		// Add initial screen with stone selection, layout options, start game
-		// button
+	public LayoutSelectionPanel(GUI gui, DataModel m) {
+		this.gui = gui;
+		this.model = m;
+		// secondary screen with layout options and apply button
 
 		//_______________SET UP PANELS___________________
-		FlowLayout alignButtons = new FlowLayout();
+	//	FlowLayout alignButtons = new FlowLayout();
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JPanel layoutPanel = new JPanel();
 		layoutPanel.setPreferredSize(new Dimension(650, 150));
-		// layoutPanel.setLayout(new GridLayout(5, 5));
+
+
+		JPanel startPanel = new JPanel();
+		startPanel.setPreferredSize(new Dimension(650, 150));
 
 		JPanel containerPanel = new JPanel();
 		containerPanel.setLayout(new BoxLayout(containerPanel, BoxLayout.Y_AXIS));
@@ -55,9 +55,18 @@ public class LayoutSelectionPanel extends JComponent{
 		layoutPanel.add(lay3Button);
 		lay3Button.setPreferredSize(new Dimension(100, 70));
 
-		
+
+		// _______________START BUTTON____________________
+		JLabel startLabel = new JLabel("Press START button to begin game after you have made your selection.");
+		// startPanel.setLayout(new GridLayout(4, 2));
+		startPanel.add(startLabel);
+		JButton startButton = new JButton("APPLY");
+		startPanel.add(startButton);
+		startPanel.setPreferredSize(new Dimension(100, 70));
+
 		containerPanel.add(layoutPanel, BorderLayout.NORTH);
-		
+		//containerPanel.add(stonePanel, BorderLayout.CENTER);
+		containerPanel.add(startPanel, BorderLayout.SOUTH);
 
 		frame.getContentPane().add(containerPanel);
 		frame.pack();
@@ -68,23 +77,32 @@ public class LayoutSelectionPanel extends JComponent{
 		lay1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				// layout = layout1();
+				gui.setBoardLayout(new Layout1());
 			}
 		});
 
 		lay2Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				// layout = layout2();
+				gui.setBoardLayout(new Layout2());
 			}
 		});
 
 		lay3Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				// layout = layout3();
+				gui.setBoardLayout(new Layout3());
 			}
 		});
+		
+		startButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				// resumeGame;
+			}
+		});
+
+
 
 	}
 }
