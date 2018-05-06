@@ -56,6 +56,7 @@ public class GUI {
 		gameWindow.add(gameBoard);
 		gameBoard.setLayout(new BorderLayout());
 		gameBoard.add(menu, BorderLayout.NORTH);		
+		gameBoard.setVisible(true);
 		
 		//set up layouts
 		Layout1 l1 = new Layout1();
@@ -91,9 +92,9 @@ public class GUI {
 		mancalaA.setBorder(BorderFactory.createLineBorder(Color.YELLOW, 5));
 		mancalaWest.add(mancalaA);
 		gameBoard.add(mancalaWest, BorderLayout.WEST);
-		mancalaWest.setVisible(false);
+		mancalaWest.setVisible(true);
 
-		gameBoard.setVisible(false);
+		gameBoard.setVisible(true);
 		
 		//start panel 
 		StartPanel startPanel = new StartPanel();

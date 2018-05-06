@@ -1,7 +1,4 @@
-/*
- * Mancala Project - Pit.java
- * @author: Thy Nguyen
- */
+
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
